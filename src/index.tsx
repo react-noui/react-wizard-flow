@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 
 interface WizardFlowProps<Step extends keyof any> {
   initialStep: Step;
@@ -30,11 +30,22 @@ export function createWizardFlow<Steps extends Record<string, keyof any>>(
     DEFAULT_WIZARD_FLOW_CONTEXT,
   );
 
-  const Provider = () => {
-    /* hold context of what the current step is */
-    /* set context value for interacting with the flow state */
-    /* render provider and current step */
-  };
+  function Provider({ initialStep, onClose, steps }: WizardFlowProps<Step>) {
+    const [step, setStep] = useState<Step>(initialStep);
+    const component = useMemo(() => steps[step], [steps, step]);
+    const contextValue = useMemo(
+      () => ({
+        transition: (step: Step): void => setStep(step),
+        close: (): void => {
+          onClose && onClose();
+        },
+      }),
+      [onClose],
+    );
+    return (
+      <Context.Provider value={contextValue}>{component}</Context.Provider>
+    );
+  }
 
   return { Provider, Context };
 }
