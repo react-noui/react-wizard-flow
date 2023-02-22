@@ -17,12 +17,8 @@ interface WizardFlow<Step extends keyof any> {
 }
 
 const DEFAULT_WIZARD_FLOW_CONTEXT = {
-  transition: () => {
-    // Set the step context value to the desired step
-  },
-  close: () => {
-    // Place for the callback once the wizard is done
-  },
+  transition: () => {}, //eslint-disable-line @typescript-eslint/no-empty-function
+  close: () => {}, //eslint-disable-line @typescript-eslint/no-empty-function
 };
 
 export function createWizardFlow<Steps extends Record<string, keyof any>>(
@@ -35,11 +31,8 @@ export function createWizardFlow<Steps extends Record<string, keyof any>>(
   );
 
   function Provider({ initialStep, onClose, steps }: WizardFlowProps<Step>) {
-    /* hold context of what the current step is */
-    /* set context value for interacting with the flow state */
-    /* render provider and current step */
     const [step, setStep] = useState<Step>(initialStep);
-    const node = useMemo(() => steps[step], [steps, step]);
+    const component = useMemo(() => steps[step], [steps, step]);
     const contextValue = useMemo(
       () => ({
         transition: (step: Step): void => setStep(step),
@@ -49,14 +42,16 @@ export function createWizardFlow<Steps extends Record<string, keyof any>>(
       }),
       [onClose],
     );
-    return <Context.Provider value={contextValue}>{node}</Context.Provider>;
+    return (
+      <Context.Provider value={contextValue}>{component}</Context.Provider>
+    );
   }
 
   return { Provider, Context };
 }
 
 export function useWizardFlow<Step extends keyof any>(
-  WizardFlow: WizardFlow<Step>,
+  wizardFlow: WizardFlow<Step>,
 ) {
-  return React.useContext(WizardFlow.Context);
+  return React.useContext(wizardFlow.Context);
 }
