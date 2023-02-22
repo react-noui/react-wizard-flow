@@ -1,0 +1,17 @@
+{
+  "@anansi/generator-js": {
+    "githubOrg": "notwillk",
+    "rootPath": "src",
+    "assetPath": "dist",
+    "serverPath": "dist-server",
+    "appName": "react-wizard-flow",
+    "githubDomain": "github.com",
+    "testing": true,
+    "features": [
+      "testing",
+      "CI"
+    ],
+    "badges": "[![CircleCI](https://circleci.com/gh/notwillk/react-wizard-flow.svg?style=shield)](https://circleci.com/gh/notwillk/react-wizard-flow)\n\n[![npm downloads](https://img.shields.io/npm/dm/react-wizard-flow.svg?style=flat-square)](https://www.npmjs.com/package/react-wizard-flow)\n[![gzip size](https://img.badgesize.io/https://unpkg.com/react-wizard-flow?compression=gzip&style=flat-square)](https://unpkg.com/react-wizard-flow)\n[![npm version](https://img.shields.io/npm/v/react-wizard-flows.svg?style=flat-square)](https://www.npmjs.com/package/react-wizard-flow)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)",
+    "libPath": "lib"
+  }
+}
