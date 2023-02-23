@@ -13,7 +13,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": ["jest"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "plugins": [
       {
         "transform": "@zerollup/ts-transform-paths"
