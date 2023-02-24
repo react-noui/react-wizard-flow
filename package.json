@@ -1,8 +1,8 @@
 {
   "name": "react-wizard-flow",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "packageManager": "yarn@3.1.1",
-  "description": "react-wizard-flow - An Anansi project",
+  "description": "react-wizard-flow",
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx",
     "format": "npm run lint --fix",
