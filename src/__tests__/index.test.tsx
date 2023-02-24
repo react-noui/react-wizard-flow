@@ -48,7 +48,7 @@ describe('#react-wizard-flow', () => {
       <TestWizardFlow.Provider initialStep={TestSteps.step1} steps={STEPS} />,
     );
     expect(getByText('Step 1')).toBeVisible();
-    fireEvent.click(getByText("To Step 2"));
+    fireEvent.click(getByText('To Step 2'));
     expect(getByText('Step 2')).toBeVisible();
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -57,11 +57,15 @@ describe('#react-wizard-flow', () => {
   it('should have a functioning close callback', async () => {
     const handleClose = jest.fn();
     const { container, getByText } = render(
-      <TestWizardFlow.Provider initialStep={TestSteps.step1} steps={STEPS} onClose={handleClose} />,
+      <TestWizardFlow.Provider
+        initialStep={TestSteps.step1}
+        steps={STEPS}
+        onClose={handleClose}
+      />,
     );
     expect(getByText('Step 1')).toBeVisible();
     expect(handleClose.mock.calls).toHaveLength(0);
-    fireEvent.click(getByText("Close"));
+    fireEvent.click(getByText('Close'));
     expect(getByText('Step 1')).toBeVisible();
     expect(handleClose.mock.calls).toHaveLength(1);
     const results = await axe(container);
@@ -74,10 +78,10 @@ describe('#react-wizard-flow', () => {
         <TestWizardFlow.Provider initialStep={TestSteps.step1} steps={STEPS} />,
       );
       expect(getByText('Step 1')).toBeVisible();
-      fireEvent.click(getByText("Close"));
+      fireEvent.click(getByText('Close'));
       expect(getByText('Step 1')).toBeVisible();
       const results = await axe(container);
       expect(results).toHaveNoViolations();
-    }).not.toThrow()
+    }).not.toThrow();
   });
 });

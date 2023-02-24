@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import filesize from 'rollup-plugin-filesize';
 import replace from 'rollup-plugin-replace';
 
-import pkg from './package.json';
+import pkg from './package.json' assert { type: 'json' };
 
 const dependencies = Object.keys(pkg.dependencies).concat(
   Object.keys(pkg.peerDependencies || {}),
@@ -28,7 +28,7 @@ function isExternal(id) {
 export default [
   // browser-friendly UMD build
   {
-    input: 'src/index.ts',
+    input: 'src/index.tsx',
     external: isExternal,
     output: [{ file: pkg.unpkg, format: 'umd', name: 'react-wizard-flow' }],
     plugins: [
@@ -47,7 +47,7 @@ export default [
   },
   // node-friendly commonjs build
   {
-    input: 'src/index.ts',
+    input: 'src/index.tsx',
     external: isExternal,
     output: [{ file: pkg.main, format: 'cjs' }],
     plugins: [
