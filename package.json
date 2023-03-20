@@ -1,6 +1,6 @@
 {
   "name": "react-wizard-flow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "yarn@3.1.1",
   "description": "react-wizard-flow",
   "scripts": {
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/notwillk/react-wizard-flow.git"
+    "url": "git+ssh://git@github.com/react-noui/react-wizard-flow.git"
   },
   "bugs": {
-    "url": "https://github.com/notwillk/react-wizard-flow/issues"
+    "url": "https://github.com/react-noui/react-wizard-flow/issues"
   },
-  "homepage": "https://github.com/notwillk/react-wizard-flow#readme",
+  "homepage": "https://github.com/react-noui/react-wizard-flow#readme",
   "keywords": [
     "anansi"
   ],
