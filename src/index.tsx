@@ -1,17 +1,17 @@
 import React, { useMemo, useState } from 'react';
 
-interface WizardFlowProps<Step extends keyof any> {
+export interface WizardFlowProps<Step extends keyof any> {
   initialStep: Step;
   onClose?: () => void;
   steps: Record<Step, JSX.Element>;
 }
 
-interface WizardFlowContext<Step extends keyof any> {
+export interface WizardFlowContext<Step extends keyof any> {
   transition: (step: Step) => void;
   close: () => void;
 }
 
-interface WizardFlow<Step extends keyof any> {
+export interface WizardFlow<Step extends keyof any> {
   Context: React.Context<WizardFlowContext<Step>>;
   Provider: (props: WizardFlowProps<Step>) => JSX.Element;
 }
