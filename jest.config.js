@@ -3,4 +3,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   modulePaths: ['src'],
   setupFilesAfterEnv: ["<rootDir>/.jest/setup.js"],
+  testPathIgnorePatterns: ['\\.d\\.ts$'],
 };

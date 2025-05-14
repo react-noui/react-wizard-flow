@@ -3,7 +3,7 @@ import React, { useMemo, useState } from 'react';
 export interface WizardFlowProps<Step extends keyof any> {
   initialStep: Step;
   onClose?: () => void;
-  steps: Record<Step, JSX.Element>;
+  steps: Record<Step, React.ReactElement>;
 }
 
 export interface WizardFlowContext<Step extends keyof any> {
@@ -13,7 +13,7 @@ export interface WizardFlowContext<Step extends keyof any> {
 
 export interface WizardFlow<Step extends keyof any> {
   Context: React.Context<WizardFlowContext<Step>>;
-  Provider: (props: WizardFlowProps<Step>) => JSX.Element;
+  Provider: (props: WizardFlowProps<Step>) => React.ReactElement;
 }
 
 const DEFAULT_WIZARD_FLOW_CONTEXT = {

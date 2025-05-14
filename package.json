@@ -1,7 +1,6 @@
 {
   "name": "react-wizard-flow",
-  "version": "1.0.2",
-  "packageManager": "yarn@3.1.1",
+  "version": "1.0.3",
   "description": "react-wizard-flow",
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx",
@@ -51,6 +50,7 @@
     "@anansi/jest-preset": "0.8.2",
     "@babel/cli": "7.21.0",
     "@babel/core": "7.21.0",
+    "@babel/runtime": "7.21.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "29.4.0",
@@ -70,6 +70,8 @@
     "jest-environment-jsdom": "29.4.3",
     "prettier": "^2.2.1",
     "react-test-renderer": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rimraf": "4.1.2",
     "rollup": "3.17.2",
     "rollup-plugin-babel": "4.4.0",
@@ -81,12 +83,9 @@
     "rollup-plugin-terser": "7.0.2",
     "typescript": "4.9.5"
   },
-  "dependencies": {
-    "@babel/runtime": "7.21.0",
+  "dependencies": {},
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0"
   }
 }
